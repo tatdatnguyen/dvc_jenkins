@@ -17,7 +17,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'docker run --rm $DOCKER_IMAGE torchserve --help'
+        sh 'docker run --rm $DOCKER_IMAGE torchserve'
       }
     }
 
