@@ -1,4 +1,7 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = /home/vbd-datnt-d/Documents/dvc_torchserve/
+    url = s3://mybucket/dvc-torchserve-bucket
+    endpointurl = http://10.124.70.57:9000
+    access_key_id = EyGb3gJr5D58bCFqJ91M
+    secret_access_key = MYE2XJJCUE6gKylSZRxnzz8ITTzFHNT4oQX9rYhp
