@@ -24,4 +24,4 @@ RUN dvc pull
 RUN mv BERTSeqClassification.mar /home/model-server/model-store
 EXPOSE 8080 8081 
 # Command to pull the model from DVC and start TorchServe
-CMD ["torchserve", "--start", "--model-store", "model-store", "--models", "BERTSeqClassification=BERTSeqClassification.mar", "--ncs", "--disable-token-auth", "--enable-model-api"]
+CMD ["torchserve", "--start", "--model-store", "/home/model-server/model-store", "--models", "BERTSeqClassification=BERTSeqClassification.mar", "--ncs", "--disable-token-auth", "--enable-model-api"]
