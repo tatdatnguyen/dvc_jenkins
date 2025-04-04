@@ -16,9 +16,14 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh 'docker run --rm -v /tmp/model-store:/home/model-server/model-store -p 7070:7070 -p 7071:7071 my-torchserve-app:latest'
-      }
+        steps {
+            script {
+                // Set a timeout of 10 minutes for the docker run
+                timeout(time: 1, unit: 'MINUTES') {
+                    sh 'docker run --rm -v /tmp/model-store:/home/model-server/model-store -p 7070:7070 -p 7071:7071 my-torchserve-app:latest'
+                }
+            }
+        }
     }
 
     stage('Deploy') {
